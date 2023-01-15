@@ -1,6 +1,5 @@
 import datetime
 from dataclasses import dataclass
-from datetime import date
 from enum import Enum
 from typing import Literal, List
 
@@ -26,18 +25,3 @@ class Student:
     image: str
     state: Literal['NCR', 'Uttar Pradesh', 'Haryana', 'Rajasthan']
     city: Literal['Karnal', 'Panipat', 'Delhi', 'Gurgaon', 'Noida', 'Agra', 'Merrut', 'Lucknow', 'Jaipur', 'Jaiselmer']
-
-
-a_santalov = Student(
-    first_name='Alexander',
-    last_name='Santalov',
-    email='asantalov@bolid.ru',
-    phone='8916777665',
-    address='Zelenograd',
-    birthday=date(1986, 8, 3),
-    gender='Male',
-    subject='Chemistry',
-    hobby=[Hobby.Music, Hobby.Sports],
-    image='Toolsqa.jpg',
-    state='Haryana',
-    city='Panipat')

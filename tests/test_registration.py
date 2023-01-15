@@ -1,19 +1,26 @@
+from datetime import date
+
 from demoqa_tests.model.pages.practice_form import PracticePage
-from demoqa_tests.model.data.Student import a_santalov
+from demoqa_tests.model.data.student import Student, Hobby
+
+practice_form = PracticePage()
 
 
 def test_registration():
-    practice_form = PracticePage(a_santalov)
+    student = Student(
+        first_name='Alexander',
+        last_name='Santalov',
+        email='asantalov@bolid.ru',
+        phone='8916777665',
+        address='Zelenograd',
+        birthday=date(1986, 8, 3),
+        gender='Male',
+        subject='Chemistry',
+        hobby=[Hobby.Music, Hobby.Sports],
+        image='Toolsqa.jpg',
+        state='Haryana',
+        city='Panipat')
+
     practice_form.open()
-    practice_form.fill_name()\
-        .fill_contacts()\
-        .set_gender()\
-        .input_birthday()\
-        .input_subject()\
-        .set_hobby()\
-        .send_image()\
-        .input_address()\
-        .select_state().\
-        select_city()\
-        .submit()
-    practice_form.assert_results_registration(10)
+    practice_form.fill(student).submit()
+    practice_form.assert_results_registration(student)
