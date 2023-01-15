@@ -1,4 +1,4 @@
-from selene import have, be
+from selene import have
 from selene.support.shared import browser
 
 from demoqa_tests.model.methods.checkbox import Checkbox
